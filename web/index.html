@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar: User Switcher & Project Quick Info -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <span class="logo-icon">⚡</span>
+                <div>
+                    <h1>RecEngine</h1>
+                    <span class="version-tag">DSA Course Project v1.0</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>👤 Select User Persona</h3>
+                <div class="user-selector-list" id="userList">
+                    <!-- Loaded dynamically via JavaScript -->
+                </div>
+            </div>
+
+            <div class="sidebar-section info-box">
+                <h3>🛠️ DSA Concepts Showcased</h3>
+                <ul class="dsa-list">
+                    <li><strong>HashMap (dict):</strong> $O(1)$ lookups for users & products.</li>
+                    <li><strong>Inverted Indexes:</strong> Category & tag indexes for fast candidate generation.</li>
+                    <li><strong>Jaccard Similarity:</strong> Collaborative user-matching and content-tag matching in $O(A + B)$.</li>
+                    <li><strong>Priority Queue (Heap):</strong> Maintains Top-N items in $O(P \log N)$ without catalog sorting.</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>Designed for Portfolio & Course Work</p>
+                <a href="../README.md" class="docs-link" target="_blank">📄 Open Project Docs</a>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="navbar">
+                <div class="nav-title">
+                    <h2>SmartCart</h2>
+                    <p>Hybrid Collaborative + Content-Based Filtering Visualizer</p>
+                </div>
+                <div class="active-user-badge">
+                    <span class="badge-dot"></span>
+                    <span>Active Profile: <strong id="currentUserName">Alex (Tech Enthusiast)</strong></span>
+                </div>
+            </header>
+
+            <!-- Grid Layout for Dashboard widgets -->
+            <div class="dashboard-grid">
+                
+                <!-- 1. Active User Profile Panel -->
+                <section class="card profile-card">
+                    <div class="card-header">
+                        <h3>👤 Active Profile & History</h3>
+                        <span class="card-subtitle">Real-time state in memory (HashMap)</span>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Purchased Items</span>
+                            <div class="tags-container" id="userPurchases">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Search Tags (Preferences)</span>
+                            <div class="tags-container pref-tags" id="userSearchTags">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Shopping Cart</span>
+                            <div class="tags-container cart-tags" id="userCart">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Sandbox Sandbox Controls -->
+                <section class="card sandbox-card">
+                    <div class="card-header">
+                        <h3>🧪 Sandbox Simulator Console</h3>
+                        <span class="card-subtitle">Perform actions to dynamically update recommendations</span>
+                    </div>
+                    <div class="sandbox-controls">
+                        <!-- Search Interaction -->
+                        <div class="control-group">
+                            <label for="searchInput">🔍 Simulate Search Query</label>
+                            <div class="input-row">
+                                <input type="text" id="searchInput" placeholder="e.g. running, audio, coffee, coding...">
+                                <button class="btn btn-primary" id="btnSearch">Search</button>
+                            </div>
+                        </div>
+
+                        <!-- Add to Cart Interaction -->
+                        <div class="control-group">
+                            <label for="productSelect">🛒 Add Product to Cart</label>
+                            <div class="input-row">
+                                <select id="productSelect">
+                                    <!-- Loaded dynamically -->
+                                </select>
+                                <button class="btn btn-secondary" id="btnAddToCart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Checkout & Reset -->
+                        <div class="action-row">
+                            <button class="btn btn-success flex-1" id="btnCheckout">💳 Buy Cart Items (Checkout)</button>
+                            <button class="btn btn-danger" id="btnResetUser">🔄 Reset Profile</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Dynamic Top-N Recommendations (Main Output) -->
+                <section class="card recommendations-card">
+                    <div class="card-header">
+                        <h3>🎯 Personalized Recommendations (Top-5 Heap Output)</h3>
+                        <span class="card-subtitle">Generated in real-time using hybrid collaborative + content scoring</span>
+                    </div>
+                    <div class="recs-grid" id="recommendationsGrid">
+                        <!-- Loaded dynamically via JS -->
+                    </div>
+                </section>
+
+                <!-- 4. Interactive Recommendation Charts -->
+                <section class="card charts-card">
+                    <div class="card-header">
+                        <h3>📊 Scoring Breakdown & Similarity Metrics</h3>
+                        <span class="card-subtitle">Hybrid weights: 50% Collaborative, 30% Content, 20% Base Rating</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="recsChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- 5. Algorithmic Visualizer -->
+                <section class="card visualizer-card">
+                    <div class="card-header">
+                        <h3>⚙️ How the Algorithms Calculate Scores</h3>
+                        <span class="card-subtitle">Visual demonstration of the math and Priority Queue heap status</span>
+                    </div>
+                    <div class="visualizer-content">
+                        <!-- Tabs -->
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="switchTab('jaccard-tab')">👥 User Jaccard Overlaps</button>
+                            <button class="tab-btn" onclick="switchTab('heap-tab')">🌲 Max-Heap States</button>
+                        </div>
+
+                        <!-- Tab 1: User Jaccard Table -->
+                        <div class="tab-content active" id="jaccard-tab">
+                            <p class="tab-description">
+                                Jaccard formula calculates overlap of purchase histories: 
+                                <code>J(User, Other) = |User ∩ Other| / |User ∪ Other|</code>
+                            </p>
+                            <div class="table-responsive">
+                                <table class="dsa-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Other Persona</th>
+                                            <th>Target Purchases</th>
+                                            <th>Their Purchases</th>
+                                            <th>Intersection (∩)</th>
+                                            <th>Union (∪)</th>
+                                            <th>Similarity Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="jaccardTableBody">
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Heap States -->
+                        <div class="tab-content" id="heap-tab">
+                            <p class="tab-description">
+                                Heap maintains the <strong>Top 5</strong> recommendations. As products are scored, we keep a Min-Heap of size 5. If a new candidate scores higher than the root (smallest), we replace it in <code>O(log N)</code>.
+                            </p>
+                            <div class="heap-visual-box">
+                                <div class="heap-tree-container" id="heapTree">
+                                    <!-- Dynamic Heap Node graphics -->
+                                </div>
+                                <div class="heap-logs">
+                                    <h4>Priority Queue Activity Log</h4>
+                                    <pre id="heapLogsText">Heap is empty. Ready for calculation.</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Action completed!</div>
+
+    <script src="app.js"></script>
+    <script>
+        // Simple tab switcher for visualizer card
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Find clicked button and corresponding content
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

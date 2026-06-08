@@ -1,0 +1,130 @@
+[
+  {
+    "id": "P101",
+    "name": "Wireless Noise-Canceling Headphones",
+    "category": "Electronics",
+    "price": 199.99,
+    "tags": ["audio", "wireless", "music", "noise-canceling", "gadgets"],
+    "rating": 4.8
+  },
+  {
+    "id": "P102",
+    "name": "Smart Fitness Watch",
+    "category": "Electronics",
+    "price": 149.99,
+    "tags": ["wearable", "fitness", "smartwatch", "health", "wireless"],
+    "rating": 4.5
+  },
+  {
+    "id": "P103",
+    "name": "Mechanical Gaming Keyboard",
+    "category": "Electronics",
+    "price": 89.99,
+    "tags": ["gaming", "keyboard", "rgb", "computer", "accessories"],
+    "rating": 4.7
+  },
+  {
+    "id": "P104",
+    "name": "Ultra HD LED Projector",
+    "category": "Electronics",
+    "price": 299.99,
+    "tags": ["video", "projector", "home-theater", "wireless", "cinema"],
+    "rating": 4.3
+  },
+  {
+    "id": "P201",
+    "name": "Premium Running Shoes",
+    "category": "Fitness",
+    "price": 119.99,
+    "tags": ["sports", "running", "footwear", "shoes", "comfort"],
+    "rating": 4.6
+  },
+  {
+    "id": "P202",
+    "name": "Ergonomic Office Chair",
+    "category": "Home & Kitchen",
+    "price": 249.99,
+    "tags": ["furniture", "office", "chair", "ergonomic", "comfort"],
+    "rating": 4.4
+  },
+  {
+    "id": "P203",
+    "name": "Stainless Steel Water Bottle",
+    "category": "Fitness",
+    "price": 24.99,
+    "tags": ["bottle", "hydration", "sports", "eco-friendly", "outdoor"],
+    "rating": 4.2
+  },
+  {
+    "id": "P204",
+    "name": "Yoga Mat with Carrying Strap",
+    "category": "Fitness",
+    "price": 29.99,
+    "tags": ["fitness", "yoga", "exercise", "grip", "wellness"],
+    "rating": 4.7
+  },
+  {
+    "id": "P301",
+    "name": "Python Algorithms & Data Structures",
+    "category": "Books",
+    "price": 45.00,
+    "tags": ["books", "coding", "python", "programming", "education"],
+    "rating": 4.9
+  },
+  {
+    "id": "P302",
+    "name": "Sapiens: A Brief History of Humankind",
+    "category": "Books",
+    "price": 18.50,
+    "tags": ["books", "history", "philosophy", "science", "reading"],
+    "rating": 4.8
+  },
+  {
+    "id": "P303",
+    "name": "Atomic Habits",
+    "category": "Books",
+    "price": 16.20,
+    "tags": ["books", "self-help", "productivity", "psychology", "reading"],
+    "rating": 4.9
+  },
+  {
+    "id": "P401",
+    "name": "Premium Blend Coffee Beans (1kg)",
+    "category": "Home & Kitchen",
+    "price": 32.00,
+    "tags": ["beverage", "coffee", "organic", "kitchen", "morning"],
+    "rating": 4.7
+  },
+  {
+    "id": "P402",
+    "name": "Electric Drip Coffee Maker",
+    "category": "Home & Kitchen",
+    "price": 59.99,
+    "tags": ["appliance", "kitchen", "coffee", "brewer", "morning"],
+    "rating": 4.3
+  },
+  {
+    "id": "P501",
+    "name": "Classic Denim Jacket",
+    "category": "Fashion",
+    "price": 75.00,
+    "tags": ["clothing", "jacket", "denim", "unisex", "vintage"],
+    "rating": 4.4
+  },
+  {
+    "id": "P502",
+    "name": "Leather Messenger Bag",
+    "category": "Fashion",
+    "price": 129.99,
+    "tags": ["accessories", "bag", "leather", "office", "travel"],
+    "rating": 4.6
+  },
+  {
+    "id": "P503",
+    "name": "Polarized Sports Sunglasses",
+    "category": "Fashion",
+    "price": 39.99,
+    "tags": ["sunglasses", "eyewear", "sports", "polarized", "outdoor"],
+    "rating": 4.5
+  }
+]

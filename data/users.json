@@ -1,0 +1,56 @@
+[
+  {
+    "user_id": "U101",
+    "name": "Alex (Tech Enthusiast)",
+    "purchase_history": ["P101", "P103"],
+    "search_history": ["audio", "wireless", "gaming", "gadgets"],
+    "cart": ["P102"],
+    "ratings": {
+      "P101": 5.0,
+      "P103": 4.0
+    }
+  },
+  {
+    "user_id": "U102",
+    "name": "Sarah (Fitness & Health)",
+    "purchase_history": ["P204", "P203"],
+    "search_history": ["fitness", "yoga", "running", "hydration"],
+    "cart": ["P201"],
+    "ratings": {
+      "P204": 5.0,
+      "P203": 4.0
+    }
+  },
+  {
+    "user_id": "U103",
+    "name": "David (Avid Reader)",
+    "purchase_history": ["P302", "P303"],
+    "search_history": ["books", "self-help", "productivity", "history"],
+    "cart": ["P301"],
+    "ratings": {
+      "P302": 4.0,
+      "P303": 5.0
+    }
+  },
+  {
+    "user_id": "U104",
+    "name": "Emma (WFH Coffee Lover)",
+    "purchase_history": ["P401", "P202"],
+    "search_history": ["coffee", "office", "morning", "kitchen"],
+    "cart": ["P402"],
+    "ratings": {
+      "P401": 5.0,
+      "P202": 5.0
+    }
+  },
+  {
+    "user_id": "U105",
+    "name": "General Shopper (Cold Start)",
+    "purchase_history": ["P501"],
+    "search_history": ["clothing", "shoes", "outdoor"],
+    "cart": [],
+    "ratings": {
+      "P501": 4.0
+    }
+  }
+]

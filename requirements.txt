@@ -1,0 +1,7 @@
+# E-Commerce Product Recommendation Engine
+# Core algorithm logic requires only Python 3.8+ standard library (no dependencies).
+# For testing and analysis, the following packages can optionally be installed:
+
+# Optional packages for additional analysis
+matplotlib>=3.8.0
+tabulate>=0.9.0
