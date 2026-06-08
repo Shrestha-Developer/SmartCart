@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/🛒_E--Commerce-Recommendation_Engine-8B5CF6?style=for-the-badge&labelColor=1e1b4b" alt="Project Title" />
 </p>
 
-<h1 align="center">E-Commerce Product Recommendation Engine</h1>
+<h1 align="center">SmartCart : E-Commerce Product Recommendation Engine</h1>
 
 <p align="center">
   <em>A production-inspired Hybrid Recommendation System built with core Data Structures & Algorithms — no ML libraries, no black boxes.</em>
